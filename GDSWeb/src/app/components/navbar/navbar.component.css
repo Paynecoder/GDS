@@ -9,6 +9,7 @@
 
 .active-link {
   color: var(--primary-color);
+  font-weight: 400;
 }
 
 .logo {

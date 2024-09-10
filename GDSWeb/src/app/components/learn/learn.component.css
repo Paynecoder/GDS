@@ -1,0 +1,38 @@
+.main {
+  font-family: "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-title {
+  font-weight: 400;
+  font-size: 2.25rem;
+}
+
+.container-left-question, .container-right-questionone, .container-right-questiontwo {
+  font-weight: 350;
+  font-size: 1.5rem;
+}
+
+.container-left-answer, .container-right-questionone-answer, .container-right-questiontwo-answer {
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.container-left,
+.container-right {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+.container-right {
+  gap: 2rem;
+}

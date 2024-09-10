@@ -4,7 +4,7 @@
     <img src="assets/Logo.svg" alt="logo" class="logo-image">
   </div>
   <ul class="nav-links">
-    <li routerLinkActive="active-link">
+    <li routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
       <a routerLink="/">Home</a>
     </li>
     <li routerLinkActive="active-link">
