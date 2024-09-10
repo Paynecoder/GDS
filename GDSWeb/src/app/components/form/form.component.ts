@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './form.component.html',
-  styleUrl: './form.component.css'
+  styleUrls: ['./form.component.css']
 })
+
 export class FormComponent {
+
+  constructor(private router: Router) {}
 
   questions = [
     'Are you basically satisfied with your life?',
@@ -50,7 +54,7 @@ export class FormComponent {
   answers: number[] = []
 
   recordAnswer(answer: 'yes' | 'no') {
-    this.answers[this.currentQIndex] =  this.questionMapping[this.currentQIndex][answer];
+    this.answers[this.currentQIndex] = this.questionMapping[this.currentQIndex][answer];
   }
 
   nextQuestion() {
@@ -69,11 +73,11 @@ export class FormComponent {
     return ((this.currentQIndex + 1) / this.questions.length) * 100;
   }
 
-  calculateScore(): number {
-    let score = 0;
-    for (let i = 0; i < this.answers.length; i++) {
-      score = this.answers[i];
-    }
-    return score;
+  calculateResult(): number {
+    return this.answers.reduce((acc, answer) => acc + answer, 0);
+  }
+
+  submitForm() {
+    this.router.navigate(['/results']);
   }
 }

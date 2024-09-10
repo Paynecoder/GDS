@@ -14,6 +14,7 @@
   <div class="container-bottom">
     <button (click)="prevQuestion()" [disabled]="currentQIndex === 0">Back</button>
     <p>Question {{currentQIndex + 1}} of {{questions.length}}</p>
-    <button (click)="nextQuestion()" [disabled]="answers[currentQIndex] === undefined">Next</button>
+    <button (click)="nextQuestion()" [disabled]="answers[currentQIndex] === undefined || currentQIndex == (questions.length - 1)">Next</button>
+      <button *ngIf="currentQIndex == (questions.length - 1)" [disabled]="answers[currentQIndex] === undefined" (click)="submitForm()">Submit Results</button>
   </div>
 </div>
