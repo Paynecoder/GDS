@@ -19,6 +19,11 @@ app.UseCors("AllowAngularClient");
 var results = new List<ResultEntry>();
 var nextKey = 10000;
 
+// FAKE DATA
+results.Add(new ResultEntry { Key = nextKey++, Score = 75 });
+results.Add(new ResultEntry { Key = nextKey++, Score = 85 });
+results.Add(new ResultEntry { Key = nextKey++, Score = 95 });
+
 //POST
 app.MapPost("/api/results", (int result) => {
     var key= nextKey++;
