@@ -4,16 +4,16 @@
 
 <div class="main">
   <div class="container-top">
-    <p class="container-top-desc">Select the answer that best describes how you felt over the past week.</p>
+    <p class="container-top-desc">Select the answer that best describes how you felt<span> over the past week.</span></p>
     <h1 class="container-top-question">{{questions[currentQIndex]}}</h1>
     <div class="container-top-answer">
-      <button (click)="recordAnswer('yes')">Yes</button>
-      <button (click)="recordAnswer('no')">No</button>
+      <button [ngClass]="{'selected': isSelected('yes')}" (click)="recordAnswer('yes')">Yes</button>
+      <button [ngClass]="{'selected': isSelected('no')}" (click)="recordAnswer('no')">No</button>
     </div>
   </div>
   <div class="container-bottom">
     <button (click)="prevQuestion()" [disabled]="currentQIndex === 0">Back</button>
-    <p>Question {{currentQIndex + 1}} of {{questions.length}}</p>
+    <p class="container-bottom-desc">Question {{currentQIndex + 1}} of {{questions.length}}</p>
     <button (click)="nextQuestion()" [disabled]="answers[currentQIndex] === undefined || currentQIndex == (questions.length - 1)">Next</button>
       <button *ngIf="currentQIndex == (questions.length - 1)" [disabled]="answers[currentQIndex] === undefined" (click)="submitForm()">Submit Results</button>
   </div>
