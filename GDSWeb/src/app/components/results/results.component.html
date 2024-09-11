@@ -1,13 +1,27 @@
-<div>
-  <label for="key">Enter Key:</label>
-  <input type="text" id="key" [(ngModel)]="key">
-  <button (click)="getResult()">Get Result</button>
+<!--NO RESULT KEY-->
+<div *ngIf="key === null" class="no-data">
+  <div>
+    <label for="key">Enter Key:</label>
+    <input type="text" />
+    <button (click)="getResult()">Get Result</button>
+  </div>
 </div>
-
-<div *ngIf="result !== null">
-  <p>Result: {{ result.result }}</p>
-</div>
-
-<div *ngIf="error">
-  <p>{{ error }}</p>
+<!--HAS RESULT KEY-->
+<div *ngIf="key !== null" class="has-data">
+  <div class="has-data-titlebox">
+    <div class="has-data-title">Your Results</div>
+    <div class="has-data-titlekey">#{{ key }}</div>
+  </div>
+  <div class="help-box">
+    <div class="help-box-results">
+      <div class="help-box-title">Geriatric Depression Risk</div>
+      <div class="help-box-score">Score: {{result.result}}/15</div>
+      <div class="help-box-desc">A score greater than 5 may suggest depression.</div>
+    </div>
+    <div class="help-box-learn">
+      <div class="help-box-learn-desc">Learn more about your results below.</div>
+      <button routerLink="/learn">Learn More</button>
+    </div>
+  </div>
+  <div class="save-me">Want to view your results in the future? Save your result number <span> #{{key}}</span> somewhere safe!</div>
 </div>

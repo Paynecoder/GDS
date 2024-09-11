@@ -54,6 +54,7 @@
   color: #fff;
   cursor: pointer;
   border: 1px solid var(--secondary-color);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px;
 }
 
 .container-top-answer button:active {
@@ -95,6 +96,7 @@
   color: #fff;
   cursor: pointer;
   border: 1px solid var(--secondary-color);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px;
 }
 
 .container-bottom button:active {

@@ -80,12 +80,11 @@
 
 .description-box-top-desc-text,
 .description-box-bottom-desc-text {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .description-box-start {
   background-color: var(--primary-color);
-  background-image: linear-gradient(to right, #6a1b9a, #8e24aa); /* Gradient background */
   color: white;
   border: none;
   padding: 1rem 1.5rem;
@@ -96,9 +95,7 @@
 }
 
 .description-box-start:hover {
-  transform: scale(1.05);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px;
-  background-image: linear-gradient(to right, #8e24aa, #6a1b9a); /* Reverse gradient on hover */
 }
 
 .description-box-start:active {
