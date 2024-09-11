@@ -15,6 +15,7 @@
 .main-desc {
   font-weight: 300;
   font-size: 1.5rem;
+  text-align: center;
 }
 
 .duration-box {
@@ -120,4 +121,59 @@
 
 .description-box-start:hover {
   cursor: pointer;
+}
+
+@media (max-width: 828px) {
+  .main-header {
+    font-size: 1.5rem;
+  }
+
+  .main-desc {
+    font-size: 1rem;
+    margin: 1rem;
+  }
+
+  .description-box-top {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .description-box-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .description-box-start {
+    padding: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .duration-box {
+    gap: 0.75rem;
+  }
+
+  .duration-box-title {
+    font-size: 1rem;
+  }
+
+  .duration-box-desc {
+    font-size: 1rem;
+  }
+
+  .description-box {
+    max-width: 70%;
+  }
+
+  .description-box-top-img, .description-box-bottom-img {
+    display: none;
+  }
+
+  .result-link {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+
 }

@@ -30,11 +30,6 @@ app.UseAuthorization();
 var results = new List<ResultEntry>();
 var nextKey = 10000;
 
-// FAKE DATA
-results.Add(new ResultEntry { Key = nextKey++, Result = 5 });
-results.Add(new ResultEntry { Key = nextKey++, Result = 10 });
-results.Add(new ResultEntry { Key = nextKey++, Result = 15 });
-
 //POST
 app.MapPost("/api/results", (ResultEntry entry) => {
     if (entry == null || entry.Result == null)

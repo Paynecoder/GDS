@@ -160,3 +160,54 @@
   font-size: 2rem;
   font-weight: 500;
 }
+
+@media (max-width: 828px) {
+  .wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .has-data {
+    padding: 1rem;
+  }
+  .has-data-titlebox {
+    font-size: 1.5rem;
+  }
+  .help-box {
+    padding: 1rem;
+  }
+  .help-box-title {
+    font-size: 1.2rem;
+  }
+  .help-box-score {
+    font-size: 1rem;
+  }
+  .help-box-desc {
+    font-size: 0.8rem;
+  }
+  .help-box-learn button {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  .save-me {
+    font-size: 1rem;
+  }
+  .no-data {
+    padding: 1rem;
+  }
+  .no-data-title {
+    font-size: 1.5rem;
+  }
+  .no-data-input {
+    font-size: 1rem;
+    height: 40px;
+  }
+  .no-data-submit {
+    font-size: 1.2rem;
+  }
+  .error-message {
+    padding: 1rem;
+  }
+  .error-title {
+    font-size: 1.5rem;
+  }
+}

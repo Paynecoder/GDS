@@ -3,8 +3,10 @@
     <a routerLink="/">GDS-15</a>
     <img src="assets/Logo.svg" alt="logo" class="logo-image">
   </div>
-  <ul class="nav-links">
-    <li routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+  <img *ngIf="mobileMenuActive == false" src="/assets/Down.svg" (click)="toggleMobileMenu()" class="carat-menu">
+  <img *ngIf="mobileMenuActive" src="/assets/Up.svg" (click)="toggleMobileMenu()">
+  <ul [ngClass]="{'nav-links': true, 'mobile-menu-active': mobileMenuActive}">
+    <li routerLinkActive="active-link">
       <a routerLink="/">Home</a>
     </li>
     <li routerLinkActive="active-link">

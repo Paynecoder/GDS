@@ -108,3 +108,23 @@
   color: #fff;
   cursor: not-allowed;
 }
+
+@media (max-width: 828px) {
+
+  .main {
+    gap: 2rem;
+  }
+
+  .container-top-desc {
+    font-size: 1rem;
+  }
+
+  .container-top-question {
+    font-size: 2rem;
+  }
+
+  .container-bottom button {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

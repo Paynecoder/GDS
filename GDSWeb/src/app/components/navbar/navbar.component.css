@@ -5,6 +5,11 @@
   padding: 3.5rem;
   color: white;
   font-family: 'Helvetica Neue', sans-serif;
+  position: relative; /* Make sure navbar is positioned relative for absolute positioning of children */
+}
+
+.carat-menu {
+  display: none;
 }
 
 .active-link {
@@ -22,7 +27,6 @@
   width: 50px;
   height: auto;
 }
-
 
 .logo a {
   font-size: 2rem;
@@ -46,4 +50,34 @@
 .nav-links li a:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 828px) {
+
+  .nav-links {
+    display: none; /* Hide the nav links by default */
+    position: absolute;
+    top: 100%; /* Start from the bottom of the navbar */
+    left: 0;
+    right: 0; /* Stretch across the full width */
+    background-color: white; /* Background color for the dropdown menu */
+    padding: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+    z-index: 1000; /* Ensure it appears above other content */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+    opacity: 0; /* Hidden by default */
+    visibility: hidden; /* Hidden by default */
+  }
+
+  .nav-links.mobile-menu-active {
+    display: block; /* Show the menu when active */
+    opacity: 1; /* Make it visible */
+    visibility: visible; /* Make it visible */
+  }
+
+  .carat-menu {
+    display: block;
+    cursor: pointer; /* Indicate it's clickable */
+  }
 }

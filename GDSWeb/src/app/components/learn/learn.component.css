@@ -41,3 +41,35 @@
 .container-right {
   gap: 2rem;
 }
+
+@media (max-width: 828px) {
+  .main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+  }
+
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container-left, .container-right {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .container-left-question, .container-right-questionone, .container-right-questiontwo {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+  .container-left-answer, .container-right-questionone-answer, .container-right-questiontwo-answer {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .container-right {
+    gap: 1rem;
+  }
+}
