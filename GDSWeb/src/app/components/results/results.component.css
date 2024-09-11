@@ -1,3 +1,13 @@
+.wrapper {
+  background-image: url('/assets/wave-haikei2.svg');
+  font-family: "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  min-height: 100vh;
+}
+
 .has-data {
   padding: 3.5rem;
   display: flex;

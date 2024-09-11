@@ -1026,27 +1026,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\apple\\.nuget\\packages\\": {}
+    "/Users/payne/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\apple\\Desktop\\GDS\\GDSApi\\GDSApi.csproj",
+      "projectUniqueName": "/Users/payne/Desktop/GDS/GDSApi/GDSApi.csproj",
       "projectName": "GDSApi",
-      "projectPath": "C:\\Users\\apple\\Desktop\\GDS\\GDSApi\\GDSApi.csproj",
-      "packagesPath": "C:\\Users\\apple\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\apple\\Desktop\\GDS\\GDSApi\\obj\\",
+      "projectPath": "/Users/payne/Desktop/GDS/GDSApi/GDSApi.csproj",
+      "packagesPath": "/Users/payne/.nuget/packages/",
+      "outputPath": "/Users/payne/Desktop/GDS/GDSApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\apple\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/payne/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1102,7 +1099,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

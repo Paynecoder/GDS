@@ -1,35 +1,56 @@
-<!--NO RESULT KEY-->
-<div *ngIf="key === null" class="no-data">
-  <div class="no-data-title">Looking for your results?</div>
-  <div class="no-data-desc">Enter your 5-digit PIN associated with your test.</div>
-  <input [(ngModel)]="inputKey" class="no-data-input" placeholder="Enter 5-digit PIN">
-  <button class="no-data-submit" (click)="submitKey()">Submit</button>
-</div>
-
-<!--HAS RESULT KEY-->
-<div *ngIf="key !== null && result" class="has-data">
-  <div class="has-data-titlebox">
-    <div class="has-data-title">Your Results</div>
-    <div class="has-data-titlekey">#{{ key }}</div>
-  </div>
-  <div class="help-box">
-    <div class="help-box-results">
-      <div class="help-box-title">Geriatric Depression Risk</div>
-      <div class="help-box-score">Score: {{result.result}}/15</div>
-      <div class="help-box-desc">A score greater than 5 may suggest depression.</div>
+<div class="wrapper">
+  <!--NO RESULT KEY-->
+  <div *ngIf="key === null" class="no-data">
+    <div class="no-data-title">Looking for your results?</div>
+    <div class="no-data-desc">
+      Enter your 5-digit PIN associated with your test.
     </div>
-    <div class="help-box-learn">
-      <div class="help-box-learn-desc">Learn more about your results below.</div>
-      <button routerLink="/learn">Learn More</button>
+    <input
+      [(ngModel)]="inputKey"
+      class="no-data-input"
+      placeholder="Enter 5-digit PIN"
+    />
+    <button class="no-data-submit" (click)="submitKey()">Submit</button>
+  </div>
+
+  <!--HAS RESULT KEY-->
+  <div *ngIf="key !== null && result" class="has-data">
+    <div class="has-data-titlebox">
+      <div class="has-data-title">Your Results</div>
+      <div class="has-data-titlekey">#{{ key }}</div>
+    </div>
+    <div class="help-box">
+      <div class="help-box-results">
+        <div class="help-box-title">Geriatric Depression Risk</div>
+        <div class="help-box-score">Score: {{ result.result }}/15</div>
+        <div class="help-box-desc">
+          A score greater than 5 may suggest depression.
+        </div>
+      </div>
+      <div class="help-box-learn">
+        <div class="help-box-learn-desc">
+          Learn more about your results below.
+        </div>
+        <button routerLink="/learn">Learn More</button>
+      </div>
+    </div>
+    <div class="save-me">
+      Want to view your results in the future? Save your result number
+      <span> #{{ key }}</span> somewhere safe!
     </div>
   </div>
-  <div class="save-me">Want to view your results in the future? Save your result number <span> #{{key}}</span> somewhere safe!</div>
-</div>
 
-<!-- ERROR MESSAGE -->
-<div *ngIf="key !== null && !result" class="error-message">
-  <div class="error-title">No results found here!</div>
-  <div class="no-data-desc">Enter your 5-digit PIN associated with your test.</div>
-  <input [(ngModel)]="inputKey" class="no-data-input" placeholder="Enter 5-digit PIN">
-  <button class="no-data-submit" (click)="submitKey()">Submit</button>
+  <!-- ERROR MESSAGE -->
+  <div *ngIf="key !== null && !result" class="error-message">
+    <div class="error-title">No results found here!</div>
+    <div class="no-data-desc">
+      Enter your 5-digit PIN associated with your test.
+    </div>
+    <input
+      [(ngModel)]="inputKey"
+      class="no-data-input"
+      placeholder="Enter 5-digit PIN"
+    />
+    <button class="no-data-submit" (click)="submitKey()">Submit</button>
+  </div>
 </div>
