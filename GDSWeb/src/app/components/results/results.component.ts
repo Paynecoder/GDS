@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 export class ResultsComponent {
 
   key: any = null;
+  inputKey: any = '';
   result: any = null;
   error: string = '';
 
@@ -27,6 +28,13 @@ export class ResultsComponent {
         this.getResult();
       }
     })
+  }
+
+  submitKey() {
+    if (this.inputKey) {
+      this.key = this.inputKey;
+      this.getResult();
+    }
   }
 
   getResult() {

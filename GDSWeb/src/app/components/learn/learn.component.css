@@ -1,9 +1,11 @@
 .main {
+  background-image: url('/assets/wave-haikei.svg');
   font-family: "Helvetica Neue", sans-serif;
   display: flex;
   flex-direction: column;
   padding-left: 3.5rem;
   padding-right: 3.5rem;
+  min-height: 100vh;
 }
 
 .main-container {
@@ -19,11 +21,14 @@
 .container-left-question, .container-right-questionone, .container-right-questiontwo {
   font-weight: 350;
   font-size: 1.5rem;
+  padding: 0.75rem;
+  color: var(--primary-color);
 }
 
 .container-left-answer, .container-right-questionone-answer, .container-right-questiontwo-answer {
   font-weight: 300;
   font-size: 1.2rem;
+  padding: 0.75rem;
 }
 
 .container-left,

@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
 }
 
 .has-data-titlebox {
@@ -20,7 +20,7 @@
   gap: 1rem;
   background-color: var(--secondary-color);
   padding: 2rem;
-  border-radius: 1rem
+  border-radius: 1rem;
 }
 
 .help-box-results {
@@ -67,7 +67,7 @@
 }
 
 .help-box-learn button:active {
-  transform: scale(.98);
+  transform: scale(0.98);
 }
 
 .save-me {
@@ -82,4 +82,71 @@
 
 .save-me span:hover {
   cursor: pointer;
+}
+
+/* NO DATA */
+.no-data {
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+.no-data-title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.no-data-input {
+  border: 3px solid #000;
+  border-radius: 5px;
+  height: 50px;
+  line-height: normal;
+  color: #282828;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  user-select: auto;
+  font-size: 16px;
+  padding: 0 6px;
+  padding-left: 12px;
+  :focus {
+    border: 3px solid #5551ff;
+  }
+}
+
+.no-data-submit {
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.no-data-submit:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px;
+}
+
+.no-data-submit:active {
+  transform: scale(0.98);
+}
+
+
+/* ERROR */
+
+.error-message {
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+.error-title {
+  font-size: 2rem;
+  font-weight: 500;
 }
