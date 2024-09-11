@@ -1,12 +1,13 @@
 <div>
   <label for="key">Enter Key:</label>
   <input type="text" id="key" [(ngModel)]="key">
-  <button (click)="getResult()">Get Score</button>
+  <button (click)="getResult()">Get Result</button>
 </div>
 
 <div *ngIf="result !== null">
-  <p>Score: {{ result }}</p>
+  <p>Result: {{ result.result }}</p>
 </div>
+
 <div *ngIf="error">
   <p>{{ error }}</p>
 </div>

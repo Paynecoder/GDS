@@ -13,15 +13,15 @@ import { FormsModule } from '@angular/forms';
 export class ResultsComponent {
 
   key: number = 0;
-  result: number | null = null;
+  result: any = null;
   error: string = '';
 
-  constructor(public resultService: ResultService) { }
+  constructor(private resultService: ResultService) { }
 
   getResult() {
     if (this.key) {
       this.resultService.getResult(this.key).subscribe({
-        next: (result: number) => {
+        next: (result: any) => {
           this.result = result;
           this.error = '';
         },
