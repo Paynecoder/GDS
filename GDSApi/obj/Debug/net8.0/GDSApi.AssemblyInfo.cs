@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GDSApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88e4a60ca67dbaf28e1bbbd94a764d5cb0cbe2c4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df681c17f1c02c5d9cc6ec0af5467658ffd7289d")]
 [assembly: System.Reflection.AssemblyProductAttribute("GDSApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GDSApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

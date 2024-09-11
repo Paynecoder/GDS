@@ -31,16 +31,21 @@ var results = new List<ResultEntry>();
 var nextKey = 10000;
 
 // FAKE DATA
-results.Add(new ResultEntry { Key = nextKey++, Result = 75 });
-results.Add(new ResultEntry { Key = nextKey++, Result = 85 });
-results.Add(new ResultEntry { Key = nextKey++, Result = 95 });
+results.Add(new ResultEntry { Key = nextKey++, Result = 5 });
+results.Add(new ResultEntry { Key = nextKey++, Result = 10 });
+results.Add(new ResultEntry { Key = nextKey++, Result = 15 });
 
 //POST
-app.MapPost("/api/results", (int result) => {
-    var key= nextKey++;
-    var resultEntry = new ResultEntry { Key = key, Result = result };
-    results.Add(resultEntry);
-    return Results.Ok(resultEntry);
+app.MapPost("/api/results", (ResultEntry entry) => {
+    if (entry == null || entry.Result == null)
+    {
+        return Results.BadRequest("Required parameter 'result' is missing.");
+    }
+
+    var key = nextKey++;
+    entry.Key = key;
+    results.Add(entry);
+    return Results.Ok(entry);
 });
 
 //GET

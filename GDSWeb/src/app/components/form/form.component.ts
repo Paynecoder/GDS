@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common'
+import { ResultService, ResultEntry } from '../../services/result.service';
 
 @Component({
   selector: 'app-form',
@@ -12,7 +13,7 @@ import { CommonModule } from '@angular/common';
 
 export class FormComponent {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private resultService: ResultService) {}
 
   questions = [
     'Are you basically satisfied with your life?',
@@ -52,6 +53,9 @@ export class FormComponent {
 
   currentQIndex = 0;
   answers: number[] = []
+  points: number = 0;
+  resultKey: number = 0;
+  error: string = '';
 
   recordAnswer(answer: 'yes' | 'no') {
     this.answers[this.currentQIndex] = this.questionMapping[this.currentQIndex][answer];
@@ -78,6 +82,15 @@ export class FormComponent {
   }
 
   submitForm() {
+    this.points = this.calculateResult();
+    this.resultService.submitResult(this.points).subscribe({
+      next: (resultEntry: ResultEntry) => {
+        this.resultKey = resultEntry.key;
+      },
+      error: (err) => {
+        this.error = 'Error posting results.';
+      }
+    });
     this.router.navigate(['/results']);
   }
 }
