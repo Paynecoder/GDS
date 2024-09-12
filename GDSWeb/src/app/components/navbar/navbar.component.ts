@@ -1,3 +1,4 @@
+// Author: Joshua Payne
 import { Component } from '@angular/core';
 import { RouterModule, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -13,6 +14,7 @@ export class NavbarComponent {
 
   mobileMenuActive = false;
 
+  // Swaps boolean value for mobile menu
   toggleMobileMenu(): void {
     this.mobileMenuActive = !this.mobileMenuActive;
   }

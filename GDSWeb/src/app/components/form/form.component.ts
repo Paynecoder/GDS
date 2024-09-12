@@ -1,3 +1,4 @@
+// Author: Joshua Payne
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common'
@@ -17,16 +18,18 @@ export class FormComponent {
 
   currentQIndex = 0;
   answers: number[] = [];
-  selectedAnswers: string[] = [];
+  selectedAnswers: string[] = []; // Stores the 'yes' or 'no' selection for each question.
   points: number = 0;
   resultKey: number = 0;
   error: string = '';
 
+  // Records the user's answer for the current question.
   recordAnswer(answer: 'yes' | 'no') {
     this.answers[this.currentQIndex] = this.questionMapping[this.currentQIndex][answer];
     this.selectedAnswers[this.currentQIndex] = answer;
   }
 
+  // True if 'yes' False if 'no' for the current question.
   isSelected(answer: 'yes' | 'no'): boolean {
     return this.selectedAnswers[this.currentQIndex] === answer;
   }
@@ -43,20 +46,23 @@ export class FormComponent {
     }
   }
 
+  // Calculates the user's progress through the test as a percentage.
   getProgress(): number {
     return ((this.currentQIndex + 1) / this.questions.length) * 100;
   }
 
+  // Sum score of answers
   calculateResult(): number {
     return this.answers.reduce((acc, answer) => acc + answer, 0);
   }
 
+  // Sends the result to the dotnet api and routes user to the results page with their information.
   submitForm() {
     this.points = this.calculateResult();
     this.resultService.submitResult(this.points).subscribe({
       next: (resultEntry: ResultEntry) => {
         this.resultKey = resultEntry.key;
-        this.router.navigate(['/results'], { queryParams: {key: this.resultKey}});
+        this.router.navigate(['/results'], { queryParams: {key: this.resultKey}}); // Retrieve key returned from http request and send user to results with it.
       },
       error: (err) => {
         this.error = 'Error posting results.';
@@ -82,6 +88,7 @@ export class FormComponent {
     'Do you think that most people are better off than you are?'
   ]
 
+  // Mapping of answers ('yes' or 'no') to points for each question.
   questionMapping = [
     { yes: 0, no: 1 },
     { yes: 1, no: 0 },

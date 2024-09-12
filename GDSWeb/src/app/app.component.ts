@@ -1,3 +1,4 @@
+// Author: Joshua Payne
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet , RouterModule} from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';

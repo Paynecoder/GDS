@@ -1,3 +1,4 @@
+// Author: Joshua Payne
 import { Component } from '@angular/core';
 import { ResultService } from '../../services/result.service';
 import { CommonModule } from '@angular/common';
@@ -14,13 +15,14 @@ import { RouterModule } from '@angular/router';
 })
 export class ResultsComponent {
 
-  key: any = null;
-  inputKey: any = '';
+  key: any = null; // Key used to retrieve the result
+  inputKey: any = ''; // Key from user input to prevent unwanted query
   result: any = null;
   error: string = '';
 
   constructor(private resultService: ResultService, private route: ActivatedRoute) { }
 
+  // Fetch a result if a key is present on load
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       if (params['key']) {
@@ -30,6 +32,7 @@ export class ResultsComponent {
     })
   }
 
+  // Submits key for result retrieval on user input
   submitKey() {
     if (this.inputKey) {
       this.key = this.inputKey;
@@ -37,6 +40,7 @@ export class ResultsComponent {
     }
   }
 
+  // Fetches the result from the api using the key.
   getResult() {
     if (this.key) {
       this.resultService.getResult(this.key).subscribe({

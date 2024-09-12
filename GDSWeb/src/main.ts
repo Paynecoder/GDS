@@ -1,3 +1,4 @@
+// Author: Joshua Payne
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
 import { AppComponent } from './app/app.component';
@@ -7,7 +8,7 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 bootstrapApplication(AppComponent, {
   providers: [
     provideHttpClient(
-      withFetch()
+      withFetch() // Sets HTTP client to use fetch API. (Supressed warning in console)
     ),
     provideRouter(routes)
   ]
