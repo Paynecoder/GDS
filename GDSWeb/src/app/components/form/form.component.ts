@@ -18,7 +18,7 @@ export class FormComponent {
 
   currentQIndex = 0;
   answers: number[] = [];
-  selectedAnswers: string[] = []; // Stores the 'yes' or 'no' selection for each question.
+  selectedAnswers: string[] = []; // Stores the 'yes' or 'no' selection.
   points: number = 0;
   resultKey: number = 0;
   error: string = '';
@@ -46,12 +46,11 @@ export class FormComponent {
     }
   }
 
-  // Calculates the user's progress through the test as a percentage.
+  // Calculates the user's progress as a percentage.
   getProgress(): number {
     return ((this.currentQIndex + 1) / this.questions.length) * 100;
   }
 
-  // Sum score of answers
   calculateResult(): number {
     return this.answers.reduce((acc, answer) => acc + answer, 0);
   }
@@ -88,7 +87,7 @@ export class FormComponent {
     'Do you think that most people are better off than you are?'
   ]
 
-  // Mapping of answers ('yes' or 'no') to points for each question.
+  // 'yes' or 'no' mapping to points for each question.
   questionMapping = [
     { yes: 0, no: 1 },
     { yes: 1, no: 0 },

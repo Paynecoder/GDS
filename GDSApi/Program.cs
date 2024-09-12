@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 
-// Configure CORS to allow requests from angular frontend.
+// CORS
 builder.Services.AddControllers();
 builder.Services.AddCors(options => {
     options.AddPolicy("AllowAngularApp",
@@ -15,7 +15,7 @@ builder.Services.AddCors(options => {
             .AllowAnyMethod());
 });
 
-// Configure EF Core with SQLite
+// SQLite
 builder.Services.AddDbContext<GDSContext>(options =>
     options.UseSqlite("Data Source=gds.db"));
 
@@ -35,7 +35,7 @@ app.UseAuthorization();
 // Endpoint: /api/results
 // Accepts a ResultEntry object, assigns a unique identifier, and adds it to the database.
 app.MapPost("/api/results", async (ResultEntry entry, GDSContext dbContext) => {
-    if (entry == null || entry.Result == null)
+    if (entry.Result == null)
     {
         return Results.BadRequest("parameter 'result' is missing :(");
     }

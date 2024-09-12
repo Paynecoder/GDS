@@ -23,7 +23,7 @@ export class ResultService {
     return this.http.get<number>(`${this.api}${key}`);
   }
 
-  // Submits a result entry to the API.
+  // Submits a result entry to the api.
   submitResult(result: number): Observable<ResultEntry> {
     return this.http.post<ResultEntry>(this.api, { result })
   }
