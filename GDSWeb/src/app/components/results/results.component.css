@@ -93,6 +93,16 @@
 
 .save-me span:hover {
   cursor: pointer;
+  text-decoration: underline;
+}
+
+.delete-me {
+  font-size: 1.2rem;
+}
+
+.delete-me:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 /* NO DATA */

@@ -57,5 +57,19 @@ app.MapGet("/api/results/{key:int}", async (int key, GDSContext dbContext) => {
     return Results.Ok(resultEntry);
 });
 
+// DELETE method to remove a result by its key.
+// Endpoint: /api/results/{key}
+// Searches for a result entry in the database using its key and removes it if found.
+app.MapDelete("/api/results/{key:int}", async (int key, GDSContext dbContext) => {
+    var resultEntry = await dbContext.Results.FindAsync(key);
+    if (resultEntry == null)
+    {
+        return Results.NotFound("result not found :( ");
+    }
+    dbContext.Results.Remove(resultEntry);
+    await dbContext.SaveChangesAsync();
+    return Results.Ok("result deleted");
+});
+
 app.Run();
 

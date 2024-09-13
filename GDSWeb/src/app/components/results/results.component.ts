@@ -18,7 +18,6 @@ export class ResultsComponent {
   key: any = null; // Key used to retrieve the result
   inputKey: any = ''; // Key from user input to prevent unwanted query
   result: any = null;
-  error: string = '';
 
   constructor(private resultService: ResultService, private route: ActivatedRoute) { }
 
@@ -46,11 +45,22 @@ export class ResultsComponent {
       this.resultService.getResult(this.key).subscribe({
         next: (result: any) => {
           this.result = result;
-          this.error = '';
         },
         error: (err) => {
-          this.error = 'Score not found :('
           this.result = null;
+        }
+      })
+    }
+  }
+
+  // Deletes a result from the db by key.
+  deleteResult() {
+    if (this.key) {
+      this.resultService.deleteResult(this.key).subscribe({
+        next: (res: any) => {
+          this.key = null;
+          this.result = null;
+          alert("result deleted")
         }
       })
     }
