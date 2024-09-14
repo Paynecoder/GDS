@@ -12,7 +12,7 @@ This repository contains a digitized GDS-15 form, which is used for administerin
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-repo/gds-15.git
+    git clone [https://github.com//gds-15.git](https://github.com/Paynecoder/GDS)
     cd gds-15
     ```
 
