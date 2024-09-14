@@ -44,3 +44,7 @@ This repository contains a digitized GDS-15 form, which is used for administerin
 
 The frontend will be available at `http://localhost:4200` and will communicate with the backend at `http://localhost:5000`.
 
+## Purpose of the Project
+
+This project was developed as part of an interview screening process. The task was to create a GDS-15 application using Angular for the frontend and .NET for the backend.
+
