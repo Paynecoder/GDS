@@ -1,0 +1,30 @@
+# Ignore Mac system files
+.DS_Store
+
+# Ignore build outputs
+bin/
+obj/
+
+# Ignore user-specific files
+.vscode/
+GDSApi/appsettings.Development.json
+
+# Ignore compiled files
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+
+# Ignore node_modules for GDSWeb
+GDSWeb/node_modules/
+
+# Ignore Angular build outputs
+GDSWeb/dist/
+GDSWeb/tmp/
+
+# Ignore environment files
+GDSWeb/src/environments/
+
+# Ignore package lock files
+GDSWeb/package-lock.json
