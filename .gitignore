@@ -28,3 +28,40 @@ GDSWeb/src/environments/
 
 # Ignore package lock files
 GDSWeb/package-lock.json
+
+# Compiled output
+/gdsweb/out-tsc
+/gdsweb/bazel-out
+
+# Node
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+/gdsweb/.idea/
+/gdsweb/.project
+/gdsweb/.classpath
+/gdsweb/.c9/
+*.launch
+/gdsweb/.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+/gdsweb/.vscode/*
+!/gdsweb/.vscode/settings.json
+!/gdsweb/.vscode/tasks.json
+!/gdsweb/.vscode/launch.json
+!/gdsweb/.vscode/extensions.json
+/gdsweb/.history/*
+
+# Miscellaneous
+/gdsweb/.angular/cache
+/gdsweb/.sass-cache/
+/gdsweb/connect.lock
+/gdsweb/coverage
+/gdsweb/libpeerconnection.log
+/gdsweb/testem.log
+/gdsweb/typings
+
+# System files
+Thumbs.db
